@@ -86,6 +86,25 @@ aside.box ul{margin:0;padding-left:1.1rem;display:grid;gap:.35rem}
 .rules li::before{content:"✕";position:absolute;left:0;top:0;color:var(--warn);font-weight:700}
 .rules li.yes::before{content:"✓";color:var(--ok)}
 
+/* Seguridad */
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1rem;margin:0 0 2.5rem}
+.why div{border-left:4px solid var(--accent);padding:.2rem 0 .2rem 1rem}
+.why b{display:block;font-family:var(--display);font-size:1.05rem;margin-bottom:.2rem}
+.why p{margin:0;color:var(--muted);font-size:.98rem}
+.sub{margin-top:2.75rem}
+.sub h3{font-size:1.45rem;font-weight:800}
+.otp{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:1.6rem;font-weight:800;letter-spacing:.12em;color:var(--accent)}
+.pin{display:flex;gap:.35rem;justify-content:center}
+.pin i{width:1.6rem;height:2rem;border-bottom:2px solid var(--ink);display:grid;place-items:center;font-style:normal;font-weight:800}
+.bar{height:4px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar span{display:block;height:100%;width:60%;background:var(--accent)}
+.key{width:1.6rem;height:1.6rem;border-radius:6px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-weight:800;font-size:.75rem;flex:none}
+table.apps{border-collapse:collapse;width:100%;font-size:.95rem}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table.apps th,table.apps td{text-align:left;padding:.65rem .8rem;border-bottom:1px solid var(--line);vertical-align:top}
+table.apps th{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+table.apps tr:last-child td{border-bottom:0}
+
 /* Ejemplos ilustrados */
 .figs{display:flex;flex-wrap:wrap;gap:1.5rem 2rem;margin-top:2rem;align-items:flex-start}
 figure{margin:0;display:grid;gap:.6rem;justify-items:start;max-width:100%}
@@ -151,6 +170,7 @@ footer p{max-width:70ch;margin:.4rem 0}
     <li><a href="#registro-civil"><b>Actas del Registro Civil</b><small>Partidas de nacimiento, matrimonio y defunción</small></a></li>
     <li><a href="#tu-jujuy"><b>Tu Jujuy</b><small>Trámites y turnos de la provincia</small></a></li>
     <li class="danger"><a href="#estafas"><b>Evitar estafas</b><small>Cómo reconocerlas y qué hacer si te pasó</small></a></li>
+    <li><a href="#seguridad"><b>Asegurá tus cuentas</b><small>Doble verificación y contraseñas seguras</small></a></li>
   </ul>
 </header>
 
@@ -422,6 +442,145 @@ footer p{max-width:70ch;margin:.4rem 0}
       <div><h3>Teléfonos útiles</h3><ul><li>Emergencias: <b>911</b></li><li>ANSES: <b>130</b></li></ul></div>
     </aside>
   </div>
+</section>
+
+<!-- SEGURIDAD -->
+<section class="guide" id="seguridad">
+  <div class="guide-head"><h2>Asegurá tus cuentas</h2><span class="chip">Prevención</span></div>
+  <p class="intro">Tu correo y tu WhatsApp son la llave de todo lo demás: con ellos se recuperan las claves del banco, de Mi Argentina y de las redes. Protegerlos te lleva 10 minutos y te ahorra muchos problemas.</p>
+
+  <div class="why">
+    <div><b>Por qué importa</b><p>Si alguien entra a tu correo, puede cambiar las contraseñas de todas tus otras cuentas y hacerse pasar por vos.</p></div>
+    <div><b>Doble verificación</b><p>Además de la contraseña (algo que sabés), te pide un código o tu celular (algo que tenés). Aunque te roben la clave, no pueden entrar.</p></div>
+    <div><b>Una clave por cuenta</b><p>Si usás la misma contraseña en todos lados y se filtra en un sitio, prueban con esa en tu correo y tu banco.</p></div>
+  </div>
+
+  <div class="sub">
+    <h3>Verificación en dos pasos en WhatsApp</h3>
+    <p class="intro">Con esto, aunque alguien consiga el código de 6 números que llega por SMS, igual necesita un PIN que solo vos sabés. Es la mejor defensa contra el robo de WhatsApp.</p>
+    <div class="cols">
+      <div>
+        <ol class="steps">
+          <li><div><strong>Abrí WhatsApp y entrá a Ajustes.</strong> En Android, tocá los tres puntos arriba a la derecha y después “Ajustes”. En iPhone, “Configuración” abajo a la derecha.</div></li>
+          <li><div><strong>Tocá “Cuenta”.</strong></div></li>
+          <li><div><strong>Tocá “Verificación en dos pasos” y después “Activar”.</strong></div></li>
+          <li><div><strong>Elegí un PIN de 6 números.</strong> Que no sea tu fecha de nacimiento, tu DNI ni 123456. Escribilo dos veces.</div></li>
+          <li><div><strong>Agregá tu correo electrónico.</strong> Sirve para recuperar el PIN si te lo olvidás. Confirmalo desde el mail que te llega.</div></li>
+          <li><div><strong>Listo.</strong> WhatsApp te va a pedir el PIN cada tanto para que no te lo olvides.</div></li>
+        </ol>
+      </div>
+      <aside class="box">
+        <div><h3>Además en WhatsApp</h3><ul><li><b>Clave de acceso:</b> en Cuenta → Llaves de acceso, para entrar con tu huella o rostro.</li><li><b>Dispositivos vinculados:</b> revisá que no haya computadoras que no conocés y cerrá las sesiones raras.</li><li><b>Privacidad:</b> limitá quién ve tu foto y quién te puede agregar a grupos.</li></ul></div>
+      </aside>
+    </div>
+    <div class="figs">
+      <figure>
+        <div class="phone" aria-label="Ejemplo de pantalla para crear el PIN de WhatsApp">
+          <div class="notch"></div>
+          <div class="ph-title">Verificación en dos pasos</div>
+          <div class="ph-sub">Ingresá un PIN de 6 dígitos que vas a recordar</div>
+          <div class="pin hl" data-n="4"><i>•</i><i>•</i><i>•</i><i>•</i><i>•</i><i>•</i></div>
+          <div class="btn">Siguiente</div>
+        </div>
+        <figcaption><span class="demo-tag">Ejemplo</span><br><b>Paso 4:</b> anotá el PIN en un lugar seguro, no en el mismo celular sin protección.</figcaption>
+      </figure>
+      <figure>
+        <div class="phone" aria-label="Ejemplo de menú Cuenta de WhatsApp">
+          <div class="notch"></div>
+          <div class="ph-title">Cuenta</div>
+          <div class="ph-row"><b>Avisos de seguridad</b><small>›</small></div>
+          <div class="ph-row"><b>Llaves de acceso</b><small>›</small></div>
+          <div class="ph-row"><b>Dirección de correo</b><small>›</small></div>
+          <div class="ph-row hl" data-n="3"><b>Verificación en dos pasos</b><small>›</small></div>
+          <div class="ph-row"><b>Cambiar número</b><small>›</small></div>
+        </div>
+        <figcaption><span class="demo-tag">Ejemplo</span><br><b>Paso 3:</b> la opción está dentro de “Cuenta”. El orden del menú puede variar.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="sub">
+    <h3>Google Authenticator (app de códigos)</h3>
+    <p class="intro">Es una app que genera un código nuevo de 6 números cada 30 segundos. Cuando entrás a tu cuenta, además de la contraseña te pide ese código. Es más segura que el código por SMS porque no se puede interceptar. También existen Microsoft Authenticator y otras que funcionan igual.</p>
+    <div class="cols">
+      <div>
+        <ol class="steps">
+          <li><div><strong>Instalá la app.</strong> Buscá “Google Authenticator” en Play Store o App Store, publicada por Google LLC.</div></li>
+          <li><div><strong>Activá la verificación en 2 pasos en tu cuenta de Google.</strong> Entrá a <a href="https://myaccount.google.com/security" target="_blank" rel="noopener">myaccount.google.com/security</a> → “Verificación en 2 pasos” → Activar.</div></li>
+          <li><div><strong>Agregá la app de autenticación.</strong> En esa misma pantalla elegí “App de autenticación”. Te muestra un código QR en la pantalla.</div></li>
+          <li><div><strong>Escaneá el QR con el celular.</strong> En Google Authenticator tocá “+” → “Escanear un código QR”. Aparece tu cuenta con un código.</div></li>
+          <li><div><strong>Escribí el código para confirmar.</strong> Copiá los 6 números que muestra la app antes de que cambien.</div></li>
+          <li><div><strong>Guardá los códigos de respaldo.</strong> En “Códigos de seguridad” Google te da 10 códigos para entrar si perdés el celular. Anotalos en papel y guardalos.</div></li>
+        </ol>
+      </div>
+      <aside class="box">
+        <div><h3>Activalo también en</h3><ul><li><b>Instagram y Facebook:</b> Centro de cuentas → Contraseña y seguridad → Autenticación en dos pasos.</li><li><b>Mercado Pago, bancos y billeteras:</b> buscá “Seguridad” en la app.</li><li><b>Correo (Gmail, Outlook):</b> es el más importante de todos.</li></ul></div>
+        <div><h3>Si cambiás de celular</h3><p style="margin:0">Antes de borrar el viejo, pasá las cuentas al nuevo con “Transferir cuentas” en la app, o iniciá sesión en Google Authenticator para guardar copia en tu cuenta.</p></div>
+      </aside>
+    </div>
+    <div class="figs">
+      <figure>
+        <div class="phone" aria-label="Ejemplo de pantalla de Google Authenticator">
+          <div class="notch"></div>
+          <div class="ph-title">Authenticator</div>
+          <div class="ph-sub">Google · maria.flores@gmail.com</div>
+          <div class="otp hl" data-n="5">482 913</div>
+          <div class="bar"><span></span></div>
+          <div class="ph-sub">Instagram · mariaflores_jujuy</div>
+          <div class="otp">075 264</div>
+          <div class="bar"><span style="width:60%"></span></div>
+        </div>
+        <figcaption><span class="demo-tag">Ejemplo</span><br><b>Paso 5:</b> la barrita muestra cuánto le queda al código. Cuando se termina, aparece uno nuevo.</figcaption>
+      </figure>
+    </div>
+    <p class="alert"><b>Atención:</b> estos códigos son solo para vos. Si alguien te pide “el código del Authenticator”, es una estafa, aunque diga ser del banco o de Google.</p>
+  </div>
+
+  <div class="sub">
+    <h3>Gestores de contraseñas (bóvedas)</h3>
+    <p class="intro">Un gestor de contraseñas es una caja fuerte digital. Guarda todas tus claves cifradas y vos solo tenés que recordar una: la contraseña maestra. Además te crea claves largas y distintas para cada sitio y las completa solo.</p>
+    <div class="cols">
+      <div>
+        <ol class="steps">
+          <li><div><strong>Elegí un gestor.</strong> Si no querés instalar nada, usá el que ya viene en tu celular (ver tabla). Si usás celular y computadora de distintas marcas, Bitwarden es gratis y funciona en todos.</div></li>
+          <li><div><strong>Creá una contraseña maestra fuerte.</strong> Usá una frase de 4 o 5 palabras que puedas recordar, por ejemplo: <i>cardón-tilcara-mate-lluvia-27</i>. No la uses en ningún otro lado.</div></li>
+          <li><div><strong>Activá la doble verificación en el gestor.</strong> Así nadie puede abrir tu bóveda solo con la contraseña.</div></li>
+          <li><div><strong>Empezá por lo importante.</strong> Cambiá primero la clave del correo, después la del banco y la de WhatsApp o redes. Dejá que el gestor genere claves nuevas.</div></li>
+          <li><div><strong>Revisá las alertas.</strong> Los gestores te avisan si una contraseña tuya apareció en una filtración o si la repetiste.</div></li>
+        </ol>
+      </div>
+      <aside class="box">
+        <div><h3>Contraseña fuerte</h3><ul><li>12 caracteres o más</li><li>Distinta para cada cuenta</li><li>Sin nombres, DNI ni fechas</li><li>Una frase larga es mejor que una palabra rara corta</li></ul></div>
+      </aside>
+    </div>
+    <div class="tablewrap" style="margin-top:1.5rem">
+      <table class="apps">
+        <thead><tr><th>Gestor</th><th>Costo</th><th>Dónde funciona</th><th>Ideal para</th></tr></thead>
+        <tbody>
+          <tr><td><b>Gestor de contraseñas de Google</b></td><td>Gratis</td><td>Android y Chrome</td><td>Quien usa Android y Gmail</td></tr>
+          <tr><td><b>Contraseñas de Apple</b></td><td>Gratis</td><td>iPhone, iPad y Mac</td><td>Quien usa todo Apple</td></tr>
+          <tr><td><b>Bitwarden</b></td><td>Gratis (tiene versión paga)</td><td>Todos los celulares y computadoras</td><td>Quien mezcla marcas</td></tr>
+          <tr><td><b>1Password</b></td><td>Pago</td><td>Todos</td><td>Familias que comparten claves</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="figs">
+      <figure>
+        <div class="phone" aria-label="Ejemplo de bóveda de contraseñas">
+          <div class="notch"></div>
+          <div class="ph-title">Mi bóveda</div>
+          <div class="ph-row"><span class="key">G</span><b>Gmail</b><small>••••••••</small></div>
+          <div class="ph-row"><span class="key">B</span><b>Mi banco</b><small>••••••••</small></div>
+          <div class="ph-row"><span class="key">A</span><b>Mi ANSES</b><small>••••••••</small></div>
+          <div class="ph-row hl" data-n="!"><span class="key">F</span><b>Facebook</b><small style="color:var(--warn)">Repetida</small></div>
+          <div class="btn">Generar contraseña</div>
+        </div>
+        <figcaption><span class="demo-tag">Ejemplo</span><br><b>Paso 5:</b> el gestor te avisa qué claves están repetidas o filtradas para que las cambies.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <p class="tip"><b>Checklist rápido:</b> bloqueo de pantalla con PIN o huella · celular y apps actualizados · verificación en dos pasos en correo, WhatsApp y banco · una contraseña distinta por cuenta · códigos de respaldo anotados en papel.</p>
 </section>
 
 <footer>
