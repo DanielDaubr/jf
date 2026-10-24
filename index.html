@@ -86,6 +86,52 @@ aside.box ul{margin:0;padding-left:1.1rem;display:grid;gap:.35rem}
 .rules li::before{content:"✕";position:absolute;left:0;top:0;color:var(--warn);font-weight:700}
 .rules li.yes::before{content:"✓";color:var(--ok)}
 
+/* Ejemplos ilustrados */
+.figs{display:flex;flex-wrap:wrap;gap:1.5rem 2rem;margin-top:2rem;align-items:flex-start}
+figure{margin:0;display:grid;gap:.6rem;justify-items:start;max-width:100%}
+figcaption{font-size:.9rem;color:var(--muted);max-width:17rem;line-height:1.4}
+figcaption b{color:var(--ink)}
+.demo-tag{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.phone{width:15.5rem;max-width:100%;border:7px solid var(--ink);border-radius:26px;background:var(--surface);padding:1.1rem .9rem 1.2rem;display:grid;gap:.6rem;font-size:.85rem;line-height:1.35}
+.phone .notch{width:4rem;height:.35rem;border-radius:99px;background:var(--line);justify-self:center;margin-top:-.4rem}
+.ph-title{font-family:var(--display);font-weight:800;font-size:1.05rem}
+.ph-sub{color:var(--muted);font-size:.8rem}
+.field{display:grid;gap:.2rem}
+.field span{font-size:.72rem;color:var(--muted);font-weight:700}
+.field i{font-style:normal;border:1px solid var(--line);border-radius:6px;padding:.4rem .5rem;background:var(--bg);font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem}
+.btn{background:var(--accent);color:var(--bg);border-radius:8px;text-align:center;padding:.5rem;font-weight:700}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.hl{outline:3px solid var(--warn);outline-offset:2px;border-radius:6px;position:relative}
+.hl::after{content:attr(data-n);position:absolute;right:-.7rem;top:-.7rem;width:1.3rem;height:1.3rem;border-radius:50%;background:var(--warn);color:var(--bg);font-size:.7rem;font-weight:800;display:grid;place-items:center}
+.ph-row{display:flex;gap:.4rem;align-items:center;padding:.45rem .5rem;border:1px solid var(--line);border-radius:6px;background:var(--bg)}
+.ph-row b{flex:1;font-weight:700}
+.ph-row small{color:var(--muted)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem}
+.tile{border:1px solid var(--line);border-radius:8px;padding:.5rem .3rem;text-align:center;font-size:.72rem;font-weight:700;background:var(--bg)}
+.tile.sos{background:var(--warn);color:var(--bg);border-color:var(--warn)}
+
+.dni{width:22rem;max-width:100%;aspect-ratio:1.586;border-radius:14px;border:1px solid var(--line);background:linear-gradient(135deg,var(--accent-soft),var(--surface) 60%);padding:.9rem 1rem;display:grid;grid-template-columns:4.2rem minmax(0,1fr);gap:.4rem .9rem;font-size:.66rem;line-height:1.25}
+.dni .head{grid-column:1/-1;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.62rem;color:var(--muted)}
+.dni .photo{background:var(--line);border-radius:6px;aspect-ratio:3/4;display:grid;place-items:end center;overflow:hidden}
+.dni .photo::before{content:"";width:60%;aspect-ratio:1;border-radius:50% 50% 0 0;background:var(--muted);opacity:.35}
+.dni dl{margin:0;display:grid;grid-template-columns:1fr 1fr;gap:.25rem .6rem}
+.dni dt{color:var(--muted);font-size:.56rem;text-transform:uppercase;letter-spacing:.04em}
+.dni dd{margin:0;font-weight:700;font-family:ui-monospace,Menlo,Consolas,monospace}
+.dni .full{grid-column:1/-1}
+
+.chat{width:17rem;max-width:100%;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:.8rem;display:grid;gap:.45rem;font-size:.85rem;line-height:1.35}
+.chat .who{font-size:.72rem;color:var(--muted);font-weight:700}
+.bub{background:var(--surface);border:1px solid var(--line);border-radius:4px 12px 12px 12px;padding:.5rem .65rem;max-width:92%}
+.bub u{color:var(--accent);word-break:break-all}
+.flag{display:block;font-size:.75rem;color:var(--warn);font-weight:700;margin-top:.15rem}
+
+.urls{display:grid;gap:.5rem;width:22rem;max-width:100%}
+.urlbar{display:flex;align-items:center;gap:.5rem;padding:.5rem .7rem;border-radius:99px;border:2px solid var(--line);background:var(--surface);font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.82rem;min-width:0}
+.urlbar span{min-width:0;overflow-wrap:anywhere}
+.urlbar.good{border-color:var(--ok)}.urlbar.bad{border-color:var(--warn)}
+.urlbar em{font-style:normal;font-weight:800;font-family:var(--body)}
+.urlbar.good em{color:var(--ok)}.urlbar.bad em{color:var(--warn)}
+
 footer{border-top:1px solid var(--line);padding-block:2rem 3rem;color:var(--muted);font-size:.92rem}
 footer p{max-width:70ch;margin:.4rem 0}
 </style>
@@ -129,6 +175,31 @@ footer p{max-width:70ch;margin:.4rem 0}
       <div><h3>Sitio oficial</h3><a class="url" href="https://www.argentina.gob.ar/miargentina" target="_blank" rel="noopener">argentina.gob.ar/miargentina</a></div>
     </aside>
   </div>
+  <div class="figs">
+    <figure>
+      <div class="phone" aria-label="Ejemplo de pantalla para crear cuenta">
+        <div class="notch"></div>
+        <div class="ph-title">Crear cuenta</div>
+        <div class="field hl" data-n="1"><span>Correo electrónico</span><i>maria.flores@gmail.com</i></div>
+        <div class="field"><span>Contraseña</span><i>••••••••••</i></div>
+        <div class="field"><span>Repetir contraseña</span><i>••••••••••</i></div>
+        <div class="btn">Crear cuenta</div>
+      </div>
+      <figcaption><span class="demo-tag">Ejemplo</span><br><b>Paso 2:</b> usá un correo que revises seguido. Ahí te llega el código para confirmar.</figcaption>
+    </figure>
+    <figure>
+      <div class="phone" aria-label="Ejemplo de validación de identidad">
+        <div class="notch"></div>
+        <div class="ph-title">Validá tu identidad</div>
+        <div class="ph-sub">Necesitamos 3 fotos</div>
+        <div class="ph-row hl" data-n="1"><b>Frente del DNI</b><small>✓ Lista</small></div>
+        <div class="ph-row hl" data-n="2"><b>Dorso del DNI</b><small>✓ Lista</small></div>
+        <div class="ph-row hl" data-n="3"><b>Selfie</b><small>Tomar foto</small></div>
+        <div class="btn">Continuar</div>
+      </div>
+      <figcaption><span class="demo-tag">Ejemplo</span><br><b>Paso 4:</b> sacá las fotos con buena luz, sin reflejos y sin anteojos ni gorra en la selfie.</figcaption>
+    </figure>
+  </div>
   <p class="tip"><b>Consejo:</b> el DNI digital de la app tiene la misma validez que la tarjeta en todo el país. Igual llevá la tarjeta para viajar al exterior.</p>
 </section>
 
@@ -151,6 +222,31 @@ footer p{max-width:70ch;margin:.4rem 0}
       <div><h3>Lo más usado</h3><ul><li>Fecha y lugar de cobro</li><li>Constancia de CUIL</li><li>Certificación Negativa</li><li>Libreta AUH</li><li>Sacar turno en una oficina</li></ul></div>
       <div><h3>Sitio y teléfono oficial</h3><a class="url" href="https://www.anses.gob.ar" target="_blank" rel="noopener">anses.gob.ar</a><p style="margin:.4rem 0 0">Línea gratuita: <b>130</b></p></div>
     </aside>
+  </div>
+  <div class="figs">
+    <figure>
+      <div class="phone" aria-label="Ejemplo de ingreso a Mi ANSES">
+        <div class="notch"></div>
+        <div class="ph-title">Ingresar</div>
+        <div class="field hl" data-n="1"><span>CUIL (sin guiones)</span><i>27301234564</i></div>
+        <div class="field hl" data-n="2"><span>Clave de la Seguridad Social</span><i>••••••••</i></div>
+        <div class="btn">Ingresar</div>
+        <div class="btn ghost">Ingresar con Mi Argentina</div>
+      </div>
+      <figcaption><span class="demo-tag">Ejemplo</span><br><b>Paso 2:</b> el CUIL son 11 números. Si no lo sabés, lo ves en la app Mi Argentina o en tu recibo de sueldo.</figcaption>
+    </figure>
+    <figure>
+      <div class="phone" aria-label="Ejemplo de menú de Mi ANSES">
+        <div class="notch"></div>
+        <div class="ph-title">Hola, María</div>
+        <div class="ph-row hl" data-n="1"><b>Mis cobros</b><small>Fecha y lugar ›</small></div>
+        <div class="ph-row"><b>Hijos</b><small>AUH / Asignaciones ›</small></div>
+        <div class="ph-row"><b>Constancias</b><small>CUIL, Negativa ›</small></div>
+        <div class="ph-row"><b>Mis datos</b><small>Domicilio, teléfono ›</small></div>
+        <div class="ph-row"><b>Turnos</b><small>Oficina ›</small></div>
+      </div>
+      <figcaption><span class="demo-tag">Ejemplo</span><br><b>Paso 4:</b> en “Mis cobros” ves el día que cobrás y en qué banco o sucursal.</figcaption>
+    </figure>
   </div>
   <p class="alert"><b>Atención:</b> ANSES nunca te pide tu clave, códigos ni datos de tu tarjeta por WhatsApp, llamado o redes sociales. Todos los trámites son gratuitos.</p>
 </section>
@@ -176,6 +272,37 @@ footer p{max-width:70ch;margin:.4rem 0}
       <div><h3>Bueno saber</h3><ul><li>El acta digital tiene firma digital y vale igual que la de papel.</li><li>El enlace de descarga dura un tiempo limitado: guardá el PDF en el celular o en tu correo apenas te llegue.</li><li>Una vez guardado, lo podés imprimir las veces que quieras.</li></ul></div>
     </aside>
   </div>
+  <div class="figs">
+    <figure>
+      <div class="dni" aria-label="Ejemplo de DNI tarjeta con el número de trámite resaltado">
+        <div class="head">República Argentina · Documento Nacional de Identidad</div>
+        <div class="photo"></div>
+        <dl>
+          <div class="full"><dt>Apellido</dt><dd>FLORES</dd></div>
+          <div class="full"><dt>Nombre</dt><dd>MARÍA ELENA</dd></div>
+          <div><dt>Sexo</dt><dd>F</dd></div>
+          <div><dt>Ejemplar</dt><dd>B</dd></div>
+          <div><dt>Fecha de nacimiento</dt><dd>12 MAR 1985</dd></div>
+          <div><dt>Fecha de emisión</dt><dd>04 JUN 2019</dd></div>
+          <div><dt>Documento</dt><dd>30.123.456</dd></div>
+          <div class="hl" data-n="!"><dt>Trámite N°</dt><dd>00512345678</dd></div>
+        </dl>
+      </div>
+      <figcaption><span class="demo-tag">Ejemplo con datos inventados</span><br><b>Paso 2:</b> el número de trámite está en el frente del DNI tarjeta, como “Trámite N°”. Es distinto del número de documento.</figcaption>
+    </figure>
+    <figure>
+      <div class="phone" aria-label="Ejemplo de formulario para pedir un acta">
+        <div class="notch"></div>
+        <div class="ph-title">Nueva solicitud</div>
+        <div class="field hl" data-n="1"><span>Tipo de acta</span><i>Nacimiento ▾</i></div>
+        <div class="field"><span>Apellido y nombre</span><i>Flores, María Elena</i></div>
+        <div class="field"><span>Fecha de nacimiento</span><i>12/03/1985</i></div>
+        <div class="field"><span>N° de acta / libro (opcional)</span><i>1234 / 2</i></div>
+        <div class="btn">Enviar solicitud</div>
+      </div>
+      <figcaption><span class="demo-tag">Ejemplo</span><br><b>Paso 4:</b> completá los datos tal como figuran en el documento. Si tenés una partida vieja, copiá el número de acta y libro.</figcaption>
+    </figure>
+  </div>
   <p class="tip"><b>Consejo:</b> si el acta tiene un error (un nombre mal escrito, por ejemplo), eso no se corrige desde la web. Tenés que pedir una rectificación en una oficina del Registro Civil.</p>
 </section>
 
@@ -199,6 +326,20 @@ footer p{max-width:70ch;margin:.4rem 0}
       <div><h3>Sitio oficial</h3><a class="url" href="https://tu.jujuy.gob.ar" target="_blank" rel="noopener">tu.jujuy.gob.ar</a></div>
     </aside>
   </div>
+  <div class="figs">
+    <figure>
+      <div class="phone" aria-label="Ejemplo de inicio de Tu Jujuy">
+        <div class="notch"></div>
+        <div class="ph-title">¿Qué necesitás hacer?</div>
+        <div class="field hl" data-n="1"><i>🔍 Buscar trámite… “planilla”</i></div>
+        <div class="grid3">
+          <div class="tile">Registro Civil</div><div class="tile">Policía</div><div class="tile">Salud</div>
+          <div class="tile">Turnos</div><div class="tile">Mis trámites</div><div class="tile sos">Pánico 911</div>
+        </div>
+      </div>
+      <figcaption><span class="demo-tag">Ejemplo</span><br><b>Paso 3:</b> escribí una palabra clave (por ejemplo “planilla” o “turno”) o tocá una categoría.</figcaption>
+    </figure>
+  </div>
   <p class="tip"><b>Consejo:</b> si un trámite te pide ir en persona, sacá el turno desde la app así evitás la fila.</p>
 </section>
 
@@ -215,6 +356,42 @@ footer p{max-width:70ch;margin:.4rem 0}
     <div class="scam"><h4>Enlaces falsos</h4><p>Mensajes con links que imitan páginas oficiales para robar tu usuario y clave.</p><span class="say">“Tu cuenta será suspendida. Ingresá aquí para validarla.”</span></div>
     <div class="scam"><h4>Premios y sorteos</h4><p>Dicen que ganaste algo, pero piden un pago o tus datos para “liberarlo”.</p><span class="say">“¡Felicitaciones! Pagá el envío y te llega el premio.”</span></div>
     <div class="scam"><h4>Compras y alquileres falsos</h4><p>Ofertas muy baratas en redes o Marketplace que piden una seña por adelantado.</p><span class="say">“Hay otro interesado, si señás hoy te lo reservo.”</span></div>
+  </div>
+
+  <h3>Así se ven los mensajes trampa</h3>
+  <div class="figs" style="margin:0 0 2.5rem">
+    <figure>
+      <div class="chat" aria-label="Ejemplo de mensaje de estafa por WhatsApp">
+        <div class="who">+54 9 11 5xxx-xxxx</div>
+        <div class="bub">Hola! Soy Lucas de soporte de WhatsApp. Por error te llegó un código de 6 números a tu teléfono, ¿me lo pasás así lo anulo? 🙏<span class="flag">⚠ Nadie de WhatsApp te escribe para pedir códigos</span></div>
+      </div>
+      <figcaption><b>Robo de WhatsApp.</b> Si pasás el código, pierden tu cuenta y le piden plata a tus contactos.</figcaption>
+    </figure>
+    <figure>
+      <div class="chat" aria-label="Ejemplo de SMS de estafa">
+        <div class="who">SMS · 2604</div>
+        <div class="bub">ANSES: Tenés un BONO de $85.000 pendiente. Validá tus datos hoy o se pierde: <u>anses-bono.validar-cobro.com</u><span class="flag">⚠ Apuro + link raro + no termina en .gob.ar</span></div>
+      </div>
+      <figcaption><b>Falso bono.</b> El link lleva a una copia de la página para robar tu clave.</figcaption>
+    </figure>
+    <figure>
+      <div class="chat" aria-label="Ejemplo de estafa del familiar con número nuevo">
+        <div class="who">+54 9 388 4xx-xxxx</div>
+        <div class="bub">Ma, se me rompió el celu, agendá este número nuevo.</div>
+        <div class="bub">Tengo que pagar algo urgente y no me anda el banco, ¿me transferís $120.000? Hoy a la noche te lo devuelvo<span class="flag">⚠ Número desconocido + pedido de plata urgente</span></div>
+      </div>
+      <figcaption><b>Familiar falso.</b> Llamá a tu familiar a su número de siempre antes de transferir.</figcaption>
+    </figure>
+    <figure>
+      <div class="urls" aria-label="Comparación de direcciones web reales y falsas">
+        <div class="urlbar good"><em>✓</em><span>www.anses.gob.ar</span></div>
+        <div class="urlbar bad"><em>✕</em><span>www.anses-gob-ar.com</span></div>
+        <div class="urlbar good"><em>✓</em><span>tu.jujuy.gob.ar</span></div>
+        <div class="urlbar bad"><em>✕</em><span>tujujuy-tramites.online</span></div>
+        <div class="urlbar bad"><em>✕</em><span>argentina.gob.ar.miscuentas.net</span></div>
+      </div>
+      <figcaption><b>Mirá cómo termina la dirección.</b> Lo que importa es lo que está justo antes de la primera “/”. Si no termina en <b>.gob.ar</b>, no es del Estado.</figcaption>
+    </figure>
   </div>
 
   <div class="cols">
@@ -248,7 +425,7 @@ footer p{max-width:70ch;margin:.4rem 0}
 </section>
 
 <footer>
-  <p><b>Esta es una guía informativa y no un sitio oficial.</b> Los pasos y pantallas de cada plataforma pueden cambiar. Ante cualquier duda, seguí las indicaciones de la página oficial o consultá en una oficina.</p>
+  <p><b>Esta es una guía informativa y no un sitio oficial.</b> Las pantallas que aparecen son ilustraciones simplificadas con datos inventados: la app real puede verse distinta. Los pasos y pantallas de cada plataforma pueden cambiar. Ante cualquier duda, seguí las indicaciones de la página oficial o consultá en una oficina.</p>
   <p>Ningún organismo público te va a pedir claves ni códigos por teléfono, WhatsApp o redes sociales.</p>
 </footer>
 </div>
