@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trámites Digitales Jujuy</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Guías simples para usar Mi Argentina, Mi ANSES, las actas digitales del Registro Civil de Jujuy, Tu Jujuy y para evitar estafas virtuales.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+/* Layout: una columna de lectura; franja de "cerro de siete colores" como firma; índice en tarjetas; cada guía = qué es / qué necesitás / pasos / consejos */
+:root{
+  --bg:#f7f6f2; --surface:#ffffff; --ink:#1f2430; --muted:#5a6070; --line:#e2dfd6;
+  --accent:#1f5e8c; --accent-soft:#e3edf5; --warn:#a33a1f; --warn-soft:#fbe9e3; --ok:#2f6b3a; --ok-soft:#e5f1e6;
+  --s1:#b8452c; --s2:#d9822b; --s3:#e8bd4a; --s4:#7a9a52; --s5:#7d5a8c; --s6:#c97a8a; --s7:#8a5a3c;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#14171e; --surface:#1c2029; --ink:#eceae4; --muted:#a3a8b5; --line:#2e3340;
+  --accent:#7db4e0; --accent-soft:#1c2c3b; --warn:#f0957a; --warn-soft:#3a221c; --ok:#8fcf98; --ok-soft:#1b2e1e; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#14171e; --surface:#1c2029; --ink:#eceae4; --muted:#a3a8b5; --line:#2e3340;
+  --accent:#7db4e0; --accent-soft:#1c2c3b; --warn:#f0957a; --warn-soft:#3a221c; --ok:#8fcf98; --ok-soft:#1b2e1e; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6}
+.wrap{max-width:62rem;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);line-height:1.15;text-wrap:balance;margin:0}
+
+.strata{display:flex;height:14px}
+.strata span{flex:1}
+.strata span:nth-child(1){background:var(--s1)}.strata span:nth-child(2){background:var(--s2)}.strata span:nth-child(3){background:var(--s3)}
+.strata span:nth-child(4){background:var(--s4)}.strata span:nth-child(5){background:var(--s5)}.strata span:nth-child(6){background:var(--s6)}.strata span:nth-child(7){background:var(--s7)}
+
+header.hero{padding-block:3rem 2.25rem}
+.eyebrow{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.hero h1{font-size:clamp(2.2rem,6vw,3.6rem);font-weight:800;margin-top:.5rem;max-width:18ch}
+.hero p.lead{font-size:1.2rem;color:var(--muted);max-width:52ch;margin:1rem 0 0}
+
+.index{display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));gap:.75rem;margin-top:2rem;padding:0;list-style:none}
+.index a{display:flex;flex-direction:column;gap:.35rem;height:100%;padding:1rem;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);text-decoration:none;transition:border-color .15s}
+.index a:hover{border-color:var(--accent)}
+.index b{font-family:var(--display);font-size:1.1rem}
+.index small{color:var(--muted);font-size:.9rem;line-height:1.4}
+.index li.danger a{border-color:var(--warn);background:var(--warn-soft)}
+
+section.guide{padding-block:3rem;border-top:1px solid var(--line)}
+.guide-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem 1rem;margin-bottom:1rem}
+.guide h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800}
+.chip{font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:.2rem .6rem;border-radius:99px}
+.chip.warn{color:var(--warn);background:var(--warn-soft)}
+.intro{max-width:62ch;margin:0 0 1.5rem}
+.cols{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:2rem}
+@media (max-width:760px){.cols{grid-template-columns:1fr}}
+h3{font-size:1.2rem;font-weight:600;margin:0 0 .75rem}
+
+ol.steps{list-style:none;counter-reset:s;margin:0;padding:0;display:grid;gap:.9rem}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:2.1rem minmax(0,1fr);gap:.75rem;align-items:start}
+ol.steps li::before{content:counter(s);font-family:var(--display);font-weight:800;font-size:1rem;width:2.1rem;height:2.1rem;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:var(--bg)}
+ol.steps strong{display:block}
+
+aside.box{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1.25rem;display:grid;gap:1.25rem;align-content:start}
+aside.box ul{margin:0;padding-left:1.1rem;display:grid;gap:.35rem}
+.url{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.95rem;word-break:break-all}
+
+.tip{margin-top:1.5rem;padding:1rem 1.25rem;border-radius:10px;background:var(--ok-soft);color:var(--ink);max-width:62ch}
+.tip b{color:var(--ok)}
+.alert{margin-top:1.5rem;padding:1rem 1.25rem;border-radius:10px;background:var(--warn-soft);max-width:62ch}
+.alert b{color:var(--warn)}
+
+.scams{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1rem;margin:1.5rem 0 2rem}
+.scam{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--warn);border-radius:10px;padding:1.1rem 1.2rem}
+.scam h4{font-family:var(--display);font-size:1.05rem;margin:0 0 .35rem}
+.scam p{margin:0;color:var(--muted);font-size:.98rem}
+.scam .say{display:block;margin-top:.6rem;color:var(--ink);font-style:italic}
+
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:.75rem 2rem;padding:0;list-style:none;margin:0 0 2rem}
+.rules li{padding-left:1.6rem;position:relative}
+.rules li::before{content:"✕";position:absolute;left:0;top:0;color:var(--warn);font-weight:700}
+.rules li.yes::before{content:"✓";color:var(--ok)}
+
+footer{border-top:1px solid var(--line);padding-block:2rem 3rem;color:var(--muted);font-size:.92rem}
+footer p{max-width:70ch;margin:.4rem 0}
+</style>
+</head>
+<body>
+
+<div class="strata" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Guía para vecinos y vecinas de Jujuy</div>
+  <h1>Tus trámites desde el celular, sin vueltas</h1>
+  <p class="lead">Explicaciones paso a paso para usar las apps del Estado y cuidarte de las estafas. Pensado para quien no se lleva bien con la tecnología.</p>
+  <ul class="index">
+    <li><a href="#mi-argentina"><b>Mi Argentina</b><small>DNI digital, licencia, turnos y más</small></a></li>
+    <li><a href="#mi-anses"><b>Mi ANSES</b><small>Cobros, asignaciones y constancias</small></a></li>
+    <li><a href="#registro-civil"><b>Actas del Registro Civil</b><small>Partidas de nacimiento, matrimonio y defunción</small></a></li>
+    <li><a href="#tu-jujuy"><b>Tu Jujuy</b><small>Trámites y turnos de la provincia</small></a></li>
+    <li class="danger"><a href="#estafas"><b>Evitar estafas</b><small>Cómo reconocerlas y qué hacer si te pasó</small></a></li>
+  </ul>
+</header>
+
+<!-- MI ARGENTINA -->
+<section class="guide" id="mi-argentina">
+  <div class="guide-head"><h2>Mi Argentina</h2><span class="chip">Nacional</span></div>
+  <p class="intro">Es la app oficial del Gobierno nacional. Ahí podés llevar tu DNI y tu licencia de conducir en el celular, sacar turnos, ver tu CUIL y hacer muchos trámites sin ir a una oficina.</p>
+  <div class="cols">
+    <div>
+      <h3>Cómo crear tu cuenta</h3>
+      <ol class="steps">
+        <li><div><strong>Descargá la app oficial.</strong> Buscá “Mi Argentina” en Play Store (Android) o App Store (iPhone). Tiene que figurar como publicada por el Gobierno de Argentina. También funciona desde la web.</div></li>
+        <li><div><strong>Tocá “Crear cuenta”.</strong> Poné tu correo electrónico y elegí una contraseña que no uses en otro lado.</div></li>
+        <li><div><strong>Confirmá tu correo.</strong> Te llega un mail con un enlace o código. Revisá también la carpeta de spam.</div></li>
+        <li><div><strong>Validá tu identidad.</strong> La app te pide tu DNI (sacale foto de frente y dorso) y una selfie. Esto deja tu cuenta en el nivel más alto y te habilita el DNI digital.</div></li>
+        <li><div><strong>Listo, explorá.</strong> En “Documentos” vas a ver tu DNI y licencia. En “Trámites” y “Turnos” encontrás el resto.</div></li>
+      </ol>
+    </div>
+    <aside class="box">
+      <div><h3>Qué necesitás</h3><ul><li>Celular con cámara</li><li>DNI tarjeta vigente</li><li>Un correo electrónico propio</li></ul></div>
+      <div><h3>Qué podés hacer</h3><ul><li>DNI y licencia digital</li><li>Ver tu CUIL</li><li>Turnos (RENAPER, ANSES y otros)</li><li>Credencial de obra social y vacunas</li></ul></div>
+      <div><h3>Sitio oficial</h3><a class="url" href="https://www.argentina.gob.ar/miargentina" target="_blank" rel="noopener">argentina.gob.ar/miargentina</a></div>
+    </aside>
+  </div>
+  <p class="tip"><b>Consejo:</b> el DNI digital de la app tiene la misma validez que la tarjeta en todo el país. Igual llevá la tarjeta para viajar al exterior.</p>
+</section>
+
+<!-- MI ANSES -->
+<section class="guide" id="mi-anses">
+  <div class="guide-head"><h2>Mi ANSES</h2><span class="chip">Nacional</span></div>
+  <p class="intro">Es el espacio personal de ANSES. Sirve para consultar cuándo y dónde cobrás, ver tus asignaciones (AUH, Asignaciones Familiares, jubilación), actualizar tus datos y sacar constancias.</p>
+  <div class="cols">
+    <div>
+      <h3>Cómo entrar por primera vez</h3>
+      <ol class="steps">
+        <li><div><strong>Conseguí tu Clave de la Seguridad Social.</strong> Entrá a anses.gob.ar y buscá “Clave de la Seguridad Social”. Podés crearla en línea validando tus datos (por ejemplo, desde tu home banking) o en una oficina de ANSES.</div></li>
+        <li><div><strong>Entrá a Mi ANSES.</strong> Desde la web o la app “Mi ANSES” (Play Store o App Store). Ingresá con tu número de CUIL y la clave. También podés entrar con tu cuenta de Mi Argentina.</div></li>
+        <li><div><strong>Revisá tus datos.</strong> Verificá que domicilio, teléfono, correo y grupo familiar estén bien. Si están mal, los cobros se pueden atrasar.</div></li>
+        <li><div><strong>Consultá lo que necesites.</strong> En el menú vas a ver “Mis cobros”, “Hijos”, “Constancias”, “Turnos” y más.</div></li>
+      </ol>
+    </div>
+    <aside class="box">
+      <div><h3>Qué necesitás</h3><ul><li>Número de CUIL</li><li>Clave de la Seguridad Social</li><li>DNI a mano</li></ul></div>
+      <div><h3>Lo más usado</h3><ul><li>Fecha y lugar de cobro</li><li>Constancia de CUIL</li><li>Certificación Negativa</li><li>Libreta AUH</li><li>Sacar turno en una oficina</li></ul></div>
+      <div><h3>Sitio y teléfono oficial</h3><a class="url" href="https://www.anses.gob.ar" target="_blank" rel="noopener">anses.gob.ar</a><p style="margin:.4rem 0 0">Línea gratuita: <b>130</b></p></div>
+    </aside>
+  </div>
+  <p class="alert"><b>Atención:</b> ANSES nunca te pide tu clave, códigos ni datos de tu tarjeta por WhatsApp, llamado o redes sociales. Todos los trámites son gratuitos.</p>
+</section>
+
+<!-- REGISTRO CIVIL -->
+<section class="guide" id="registro-civil">
+  <div class="guide-head"><h2>Actas digitales del Registro Civil de Jujuy</h2><span class="chip">Provincial</span></div>
+  <p class="intro">Desde esta página podés pedir partidas (actas) de nacimiento, matrimonio o defunción registradas en Jujuy sin ir a la oficina. Sirve también si sos jujeño y vivís en otra provincia o en otro país.</p>
+  <div class="cols">
+    <div>
+      <h3>Cómo pedir un acta</h3>
+      <ol class="steps">
+        <li><div><strong>Entrá a la página oficial.</strong> <a href="https://rcactasdigitales.jujuy.gob.ar/login" target="_blank" rel="noopener">rcactasdigitales.jujuy.gob.ar</a>. Fijate que la dirección termine en <b>jujuy.gob.ar</b>.</div></li>
+        <li><div><strong>Creá tu cuenta.</strong> La primera vez registrate con tus datos, un correo y una contraseña. Vas a necesitar el <b>número de trámite</b> que figura en el frente de tu DNI tarjeta.</div></li>
+        <li><div><strong>Iniciá sesión.</strong> Entrá con el usuario y la contraseña que creaste.</div></li>
+        <li><div><strong>Elegí qué acta necesitás.</strong> Nacimiento, matrimonio o defunción. Completá los datos de la persona (nombre completo, fecha y lugar). Si tenés una partida vieja, copiá el número de acta y libro: ayuda a encontrarla más rápido.</div></li>
+        <li><div><strong>Pagá si corresponde.</strong> Algunas actas tienen un costo. Seguí las opciones de pago que te muestre la página.</div></li>
+        <li><div><strong>Esperá el correo.</strong> El acta llega a tu mail en un plazo de hasta 3 días hábiles. Si no la ves, buscá en spam o en la pestaña “Consulta” de la misma página.</div></li>
+      </ol>
+    </div>
+    <aside class="box">
+      <div><h3>Qué necesitás</h3><ul><li>DNI tarjeta (por el número de trámite)</li><li>Correo electrónico</li><li>Datos de la persona del acta</li></ul></div>
+      <div><h3>Bueno saber</h3><ul><li>El acta digital tiene firma digital y vale igual que la de papel.</li><li>El enlace de descarga dura un tiempo limitado: guardá el PDF en el celular o en tu correo apenas te llegue.</li><li>Una vez guardado, lo podés imprimir las veces que quieras.</li></ul></div>
+    </aside>
+  </div>
+  <p class="tip"><b>Consejo:</b> si el acta tiene un error (un nombre mal escrito, por ejemplo), eso no se corrige desde la web. Tenés que pedir una rectificación en una oficina del Registro Civil.</p>
+</section>
+
+<!-- TU JUJUY -->
+<section class="guide" id="tu-jujuy">
+  <div class="guide-head"><h2>Tu Jujuy</h2><span class="chip">Provincial</span></div>
+  <p class="intro">Es la plataforma y app del Gobierno de la Provincia de Jujuy. Reúne más de un centenar de trámites provinciales en un solo lugar: Registro Civil, Policía, turnos de salud y más. También tiene noticias, agenda cultural y un botón de emergencia conectado al 911.</p>
+  <div class="cols">
+    <div>
+      <h3>Cómo empezar</h3>
+      <ol class="steps">
+        <li><div><strong>Entrá a la web o bajá la app.</strong> Desde <a href="https://tu.jujuy.gob.ar" target="_blank" rel="noopener">tu.jujuy.gob.ar</a>, o buscá “Tu Jujuy” en Play Store o App Store, publicada por el Gobierno de Jujuy.</div></li>
+        <li><div><strong>Registrate.</strong> Creá tu cuenta con DNI, correo y contraseña. Confirmá el correo que te llega.</div></li>
+        <li><div><strong>Buscá tu trámite.</strong> Usá el buscador o navegá por categoría (Registro Civil, Policía, Salud, etc.).</div></li>
+        <li><div><strong>Seguí los pasos de cada trámite.</strong> Cada uno te dice qué datos o fotos cargar, si tiene costo y cómo vas a recibir la respuesta.</div></li>
+        <li><div><strong>Revisá el estado.</strong> En tu perfil ves los trámites iniciados y los turnos que sacaste.</div></li>
+      </ol>
+    </div>
+    <aside class="box">
+      <div><h3>Trámites frecuentes</h3><ul><li>Turnos del Registro Civil</li><li>Planilla prontuarial (antecedentes)</li><li>Turnos para carnet sanitario</li><li>Denuncias y botón de pánico</li></ul></div>
+      <div><h3>Sitio oficial</h3><a class="url" href="https://tu.jujuy.gob.ar" target="_blank" rel="noopener">tu.jujuy.gob.ar</a></div>
+    </aside>
+  </div>
+  <p class="tip"><b>Consejo:</b> si un trámite te pide ir en persona, sacá el turno desde la app así evitás la fila.</p>
+</section>
+
+<!-- ESTAFAS -->
+<section class="guide" id="estafas">
+  <div class="guide-head"><h2>Cómo evitar estafas virtuales y robo de identidad</h2><span class="chip warn">Importante</span></div>
+  <p class="intro">Los estafadores se hacen pasar por ANSES, bancos, empresas o familiares para que les des tus claves o códigos. Con esos datos vacían cuentas, sacan préstamos a tu nombre o te roban el WhatsApp. Conocer sus trucos es la mejor defensa.</p>
+
+  <h3>Las estafas más comunes</h3>
+  <div class="scams">
+    <div class="scam"><h4>Falso empleado de ANSES o del banco</h4><p>Te llaman o escriben por un supuesto bono, deuda o problema en tu cuenta.</p><span class="say">“Para cobrar el bono, vaya al cajero y siga mis instrucciones.”</span></div>
+    <div class="scam"><h4>Robo de WhatsApp</h4><p>Te piden “el código de 6 números que te llegó por SMS”. Con eso se quedan con tu cuenta y le piden plata a tus contactos.</p><span class="say">“Te mandé un código por error, ¿me lo pasás?”</span></div>
+    <div class="scam"><h4>“Hola, cambié de número”</h4><p>Alguien se hace pasar por un hijo, nieto o amigo y pide una transferencia urgente.</p><span class="say">“Ma, este es mi número nuevo. Necesito que me transfieras ya.”</span></div>
+    <div class="scam"><h4>Enlaces falsos</h4><p>Mensajes con links que imitan páginas oficiales para robar tu usuario y clave.</p><span class="say">“Tu cuenta será suspendida. Ingresá aquí para validarla.”</span></div>
+    <div class="scam"><h4>Premios y sorteos</h4><p>Dicen que ganaste algo, pero piden un pago o tus datos para “liberarlo”.</p><span class="say">“¡Felicitaciones! Pagá el envío y te llega el premio.”</span></div>
+    <div class="scam"><h4>Compras y alquileres falsos</h4><p>Ofertas muy baratas en redes o Marketplace que piden una seña por adelantado.</p><span class="say">“Hay otro interesado, si señás hoy te lo reservo.”</span></div>
+  </div>
+
+  <div class="cols">
+    <div>
+      <h3>Reglas de oro</h3>
+      <ul class="rules">
+        <li>Nunca compartas claves, PIN, token ni códigos que te lleguen por SMS o WhatsApp.</li>
+        <li>Nunca vayas al cajero porque alguien te lo pide por teléfono. En el cajero no se cobran bonos.</li>
+        <li>No toques enlaces que llegan por mensaje. Escribí vos la dirección oficial.</li>
+        <li>No mandes fotos de tu DNI ni selfies a desconocidos.</li>
+        <li class="yes">Activá la “Verificación en dos pasos” en WhatsApp (Ajustes → Cuenta).</li>
+        <li class="yes">Si un familiar pide plata, llamalo a su número de siempre antes de transferir.</li>
+        <li class="yes">Cortá y llamá vos al número oficial que figura en tu tarjeta o en la web.</li>
+        <li class="yes">Desconfiá de la urgencia: el apuro es la herramienta principal del estafador.</li>
+      </ul>
+      <p style="margin:0">Los sitios del Estado terminan en <b>.gob.ar</b>. Si la dirección tiene letras de más, guiones raros o termina distinto, no es oficial.</p>
+    </div>
+    <aside class="box">
+      <div><h3>Si ya te pasó</h3>
+        <ol class="steps">
+          <li><div><strong>Llamá a tu banco</strong> al número de tu tarjeta y pedí bloquear cuentas y tarjetas.</div></li>
+          <li><div><strong>Cambiá tus claves</strong> desde otro dispositivo: correo, home banking, Mi Argentina, Mi ANSES.</div></li>
+          <li><div><strong>Hacé la denuncia</strong> en una comisaría o en el Ministerio Público de la Acusación de Jujuy. Guardá capturas, números y comprobantes.</div></li>
+          <li><div><strong>Avisá a tus contactos</strong> si te robaron el WhatsApp o las redes.</div></li>
+          <li><div><strong>Si perdiste el DNI</strong> o creés que lo usan, denuncialo y pedí uno nuevo en el Registro Civil.</div></li>
+        </ol>
+      </div>
+      <div><h3>Teléfonos útiles</h3><ul><li>Emergencias: <b>911</b></li><li>ANSES: <b>130</b></li></ul></div>
+    </aside>
+  </div>
+</section>
+
+<footer>
+  <p><b>Esta es una guía informativa y no un sitio oficial.</b> Los pasos y pantallas de cada plataforma pueden cambiar. Ante cualquier duda, seguí las indicaciones de la página oficial o consultá en una oficina.</p>
+  <p>Ningún organismo público te va a pedir claves ni códigos por teléfono, WhatsApp o redes sociales.</p>
+</footer>
+</div>
+<div class="strata" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+</body>
+</html>
